@@ -1,0 +1,19 @@
+{
+  "name": "group_project_repo",
+  "version": "1.0.0",
+  "description": "Group crypto project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yazmnh87/Group_project_repo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yazmnh87/Group_project_repo/issues"
+  },
+  "homepage": "https://github.com/yazmnh87/Group_project_repo#readme"
+}
