@@ -10,17 +10,11 @@ class Coins extends Component {
         <Consumer>
 
             {value=> {
-                
-                if(value.coins.length !== 0) console.log(value)
+                console.log(value.coinNames)
+              
                 if (value !== undefined){
-                    // console.log(value.coins.DISPLAY ? value.coins.DISPLAY.BTC.USD.PRICE : null)
-                }
-                
-                return (
-                    <div className="CoinInfo">
-                        {value.coins.DISPLAY ? <CoinInfo price={value.coins.DISPLAY.BTC.USD.PRICE} /> : null}
-                    </div>
-                )
+                    return <h1>hi</h1>
+                }   
             }
             }
        

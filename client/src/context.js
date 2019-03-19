@@ -29,16 +29,16 @@ export class Provider extends Component {
     getCoinData2 = () => {
       axios.get(`https://vschool-cors.herokuapp.com?url=https://rest.coinapi.io/v1/assets?apikey=${process.env.REACT_APP_COINAPI}`)
       .then(res => {
-        
+        const data = res.data
         this.setState({
-          coinNames: res.data
+          coinNames: data.slice(0, 15)
         })
       })
     }
 
   render() {
     return (
-        <Context.Provider value={this.state}>
+        <Context.Provider value={{...this.props,...this.state}}>
         {this.props.children}
         </Context.Provider>
     )
