@@ -4,6 +4,7 @@ import NavBar from "./NavBar"
 import CoinInfo from "./CoinInfo"
 import UserProfile from "./UserProfile"
 import './App.css';
+import Coins from "./Coins"
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
       <div className="AppDiv">
         <NavBar/>
         <UserProfile/>
-        <CoinInfo/>
+        <Coins />
       </div>
       </Provider>
     );

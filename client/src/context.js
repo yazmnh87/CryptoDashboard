@@ -13,7 +13,7 @@ export class Provider extends Component {
     componentDidMount(){
       axios.get(`https://vschool-cors.herokuapp.com?url=https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH,EOS,XRP,BTC,LTC&tsyms=BTC,USD,EUR&api_key=${process.env.REACT_APP_MM}`)
       .then(res => {
-        console.log(res.data)
+        
         this.setState({
           coins: res.data
         })
