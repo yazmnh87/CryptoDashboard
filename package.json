@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/yazmnh87/Group_project_repo/issues"
   },
-  "homepage": "https://github.com/yazmnh87/Group_project_repo#readme"
+  "homepage": "https://github.com/yazmnh87/Group_project_repo#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
 }
