@@ -10,6 +10,8 @@ class Coins extends Component {
         <Consumer>
 
             {value=> {
+                
+                if(value.coins.length !== 0) console.log(value)
                 if (value !== undefined){
                     // console.log(value.coins.DISPLAY ? value.coins.DISPLAY.BTC.USD.PRICE : null)
                 }
