@@ -6,11 +6,7 @@ const Context = React.createContext();
 
 export class Provider extends Component {
     state = {
-<<<<<<< HEAD
-      list: []
-=======
       coins = []
->>>>>>> context
     }
 
 
