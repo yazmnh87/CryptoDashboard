@@ -15,7 +15,7 @@ class UserProfile extends Component {
             <h1 style={{textAlign:"center"}}>Name</h1>
             <hr style={{marginTop:"-10px", marginBottom:"-10px"}}/>
             <h1 style={{textAlign:"center"}}>Coin Name</h1>
-            <img style={{width:150, display:'block',margin:"auto", marginTop:30}} src={`${logo}`} alt=""/>
+            <img style={{width:150, display:'block',margin:"auto", marginTop:30}} src={`${this.state.logo}`} alt=""/>
             <h1 style={{textAlign:"center", color:"red"}}>Price</h1>
             <h1 style={{textAlign:"center"}}>Percentage</h1>
             <select style={{display:"block", margin:"auto", zoom:"200%"}}>
