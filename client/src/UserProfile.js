@@ -1,0 +1,24 @@
+import React from 'react';
+import {Link} from "react-router-dom"
+
+const UserProfile = () => {
+    return (
+        <div className="UserProfile" style={{borderRight:"solid white", }}>
+            <img style={{width:150, display:'block',margin:"auto", marginTop:15}} src="https://png.pngtree.com/svg/20170602/b7c3ca6e9e.png" alt=""/>
+            <h1 style={{textAlign:"center"}}>Name</h1>
+            <hr style={{marginTop:"-10px", marginBottom:"-10px"}}/>
+            <h1 style={{textAlign:"center"}}>Coin Name</h1>
+            <img style={{width:150, display:'block',margin:"auto", marginTop:30}} src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png" alt=""/>
+            <h1 style={{textAlign:"center", color:"red"}}>Price</h1>
+            <h1 style={{textAlign:"center"}}>Percentage</h1>
+            <select style={{display:"block", margin:"auto", zoom:"200%"}}>
+                <option style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>Coin Name</option>
+                <option style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>Coin Name</option>
+                <option style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>Coin Name</option>
+                <option style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>Coin Name</option>
+            </select>
+        </div>
+    );
+};
+
+export default UserProfile;
