@@ -15,17 +15,13 @@ cryptoRoute.route('/')
             }
         })
     })
-    .post( async (req, res) => {
-        const arr = req.body
-        const newCoin = arr.slice(0,1)
-        const savedCoin = new Crypto(newCoin)
-        await savedCoin.save(err => {
-            err && res.status(500).send(err)
-            return res.status(200).send(savedCoin)
-            }
-
-        )
-
+    .post((req, res) => {
+       const coinInfo = new Crypto(req.body)
+       console.log(req.body)
+       coinInfo.save((err) => {
+           if(err) return res.status(500).send(err)
+        return res.status(200).send(coinInfo)
+        })
     })
 
 

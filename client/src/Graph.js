@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import {Line} from 'react-chartjs'
+import {Line} from 'chart.js'
 
 class Graph extends Component{
     render(){

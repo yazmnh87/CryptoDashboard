@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 const Context = React.createContext();
 
-   
 
 export class Provider extends Component {
     state = {
@@ -23,7 +22,8 @@ export class Provider extends Component {
       ETHname: [],
       XRPname: [],
       LTCname: [],
-      EOSname: []
+      EOSname: [],
+      counter: 10
     }
 
     componentDidMount(){
@@ -35,11 +35,15 @@ export class Provider extends Component {
       this.getHistoricalXRP()
       this.getHistoricalLTC()
       this.getHistoricalEOS()
+      this.getCoinNames()
+      this.countDown()
  }
 
-componentDidUpdate(){
-  console.log('component updated')
-  this.postCoinDataDB()
+ countDown = () => {
+  setInterval(() => { 
+     console.log("running")
+    this.postCoinDataDB();
+    }, 10000)
 }
 
 
@@ -49,7 +53,7 @@ componentDidUpdate(){
         this.setState({
           BTCHISTORICAL: res.data
         })
-        console.log(this.state.BTCHISTORICAL)
+        // console.log(this.state.BTCHISTORICAL)
       })
     }
     
@@ -59,7 +63,7 @@ componentDidUpdate(){
         this.setState({
           ETHHISTORICAL: res.data
         })
-        console.log(this.state.ETHHISTORICAL)
+        // console.log(this.state.ETHHISTORICAL)
       })
     }
       getHistoricalXRP = () => {
@@ -68,7 +72,7 @@ componentDidUpdate(){
         this.setState({
           XRPHISTORICAL: res.data
         })
-        console.log(this.state.XRPHISTORICAL)
+        // console.log(this.state.XRPHISTORICAL)
       })
     }
       getHistoricalLTC = () => {
@@ -77,7 +81,7 @@ componentDidUpdate(){
         this.setState({
           LTCHISTORICAL: res.data
         })
-        console.log(this.state.LTCHISTORICAL)
+        // console.log(this.state.LTCHISTORICAL)
       })
     }
       getHistoricalEOS = () => {
@@ -86,9 +90,19 @@ componentDidUpdate(){
         this.setState({
           EOSHISTORICAL: res.data
         })
-        console.log(this.state.EOSHISTORICAL)
+        // console.log(this.state.EOSHISTORICAL)
       })
     }
+    getCoinNames = () => {
+       axios.get(`https://vschool-cors.herokuapp.com?url=https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH,EOS,XRP,BTC,LTC&tsyms=USD&api_key=${process.env.REACT_APP_MM}`)
+        .then(res => {
+          this.setState({
+            coinNames: res.data.DISPLAY.BTC
+          })
+          // console.log('coinNames')
+          // console.log(this.state.coinNames)
+    })}
+
     getCoinData = () => {
       axios.get(`https://vschool-cors.herokuapp.com?url=https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH,EOS,XRP,BTC,LTC&tsyms=BTC,USD,EUR&api_key=${process.env.REACT_APP_MM}`)
       .then(res => {
@@ -101,11 +115,11 @@ componentDidUpdate(){
           LTC: res.data.DISPLAY.XRP.USD,
           EOS: res.data.DISPLAY.EOS.USD,
         })
-        console.log(this.state.BTC);
-        console.log(this.state.ETH);
-        console.log(this.state.LTC);
-        console.log(this.state.XRP);
-        console.log(this.state.EOS);
+        // console.log(this.state.BTC);
+        // console.log(this.state.ETH);
+        // console.log(this.state.LTC);
+        // console.log(this.state.XRP);
+        // console.log(this.state.EOS);
       })
     }
 
@@ -126,7 +140,7 @@ componentDidUpdate(){
     }
 
     postCoinDataDB = () => {
-      axios.post('/crypto', this.state.coinNames)
+     axios.post('/crypto', this.state.coinNames)
       .then(res => {
         console.log(res.data)
       })
