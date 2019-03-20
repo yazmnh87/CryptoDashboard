@@ -5,10 +5,12 @@ class UserProfile extends Component {
     constructor() {
         super()
         this.state = {
-            logo: []
+            currentCoin: []
         }
     }
-    
+    handleChange = (event) => {
+        this.setState({currentCoin: event.target.value})
+    }
    render() {
     return (
         <Consumer>
@@ -24,12 +26,12 @@ class UserProfile extends Component {
             <img style={{width:150, display:'block',margin:"auto", marginTop:30}} alt=""/>
             <h1 style={{textAlign:"center", color:"red"}}>{value.coins.DISPLAY ? value.coins.DISPLAY.BTC.USD.PRICE : null} </h1>
             <h1 style={{textAlign:"center"}}>Percentage</h1>
-            <select style={{display:"block", margin:"auto", zoom:"200%"}}>
-                <option style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>Bitcoin</option>
-                <option style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>Ethereum</option>
-                <option style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>XRP</option>
-                <option style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>Litecoin</option>
-                <option style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>EOS</option>
+            <select style={{display:"block", margin:"auto", zoom:"200%"}} onChange={this.handleChange} value={this.state.currentCoin}>
+                <option value='BTC' name='BTC'  style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>Bitcoin</option>
+                <option value='ETH' name='ETH'  style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>Ethereum</option>
+                <option value='XRP' name='XRP'  style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>XRP</option>
+                <option value='LTC' name='LTC'  style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>Litecoin</option>
+                <option value='EOS' name='EOS' style={{marginTop:"1%", marginBottom:"1%", color:"#5ae0e7", textDecoration:"none"}}>EOS</option>
             </select>
         </div>
                 
