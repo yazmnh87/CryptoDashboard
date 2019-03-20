@@ -5,7 +5,8 @@ class UserProfile extends Component {
     constructor() {
         super()
         this.state = {
-            currentCoin: 'BTC',
+            currentCoin: 'BTC'
+
         }
     }
     handleChange = (event) => {

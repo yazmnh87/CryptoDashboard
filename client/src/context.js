@@ -86,8 +86,18 @@ export class Provider extends Component {
       .then(res => {
         
         this.setState({
-          coins: res.data
+          coins: res.data,
+          BTC: res.data.DISPLAY.BTC.USD,
+          ETH: res.data.DISPLAY.ETH.USD,
+          XRP: res.data.DISPLAY.LTC.USD,
+          LTC: res.data.DISPLAY.XRP.USD,
+          EOS: res.data.DISPLAY.EOS.USD,
         })
+        console.log(this.state.BTC);
+        console.log(this.state.ETH);
+        console.log(this.state.LTC);
+        console.log(this.state.XRP);
+        console.log(this.state.EOS);
       })
     }
 
@@ -96,8 +106,13 @@ export class Provider extends Component {
       .then(res => {
         const data = res.data
         this.setState({
-          coinNames: data.slice(0, 15)
+          BTC: data.slice(0, 1),
+          ETH: data.slice(2, 3),
+          LTC: data.slice(4, 5),
+          XRP: data.slice(8, 9),
+          EOS: data.slice(14, 15)
         })
+
       })
       
     }
