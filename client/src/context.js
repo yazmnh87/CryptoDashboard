@@ -11,10 +11,14 @@ export class Provider extends Component {
     }
 
     componentDidMount(){
+      console.log('component mounted')
       this.getCoinData() 
       this.getCoinData2()
  }
-
+componentDidUpdate(){
+  console.log('component updated')
+  this.postCoinDataDB()
+}
 
     getCoinData = () => {
       axios.get(`https://vschool-cors.herokuapp.com?url=https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH,EOS,XRP,BTC,LTC&tsyms=BTC,USD,EUR&api_key=${process.env.REACT_APP_MM}`)
@@ -33,6 +37,13 @@ export class Provider extends Component {
         this.setState({
           coinNames: data.slice(0, 15)
         })
+      })
+    }
+
+    postCoinDataDB = () => {
+      axios.post('/crypto', this.state.coinNames)
+      .then(res => {
+        console.log(res.data)
       })
     }
 
