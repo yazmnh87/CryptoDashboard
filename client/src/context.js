@@ -13,7 +13,17 @@ export class Provider extends Component {
       ETHHISTORICAL: [],
       XRPHISTORICAL: [],
       LTCHISTORICAL: [],
-      EOSHISTORICAL: []
+      EOSHISTORICAL: [],
+      BTC: [],
+      ETH: [],
+      XRP: [],
+      LTC: [],
+      EOS: [],
+      BTCname: [],
+      ETHname: [],
+      XRPname: [],
+      LTCname: [],
+      EOSname: []
     }
 
     componentDidMount(){
@@ -88,7 +98,6 @@ export class Provider extends Component {
         this.setState({
           coinNames: data.slice(0, 15)
         })
-        console.log(this.state.coinNames)
       })
       
     }
