@@ -27,6 +27,7 @@ export class Provider extends Component {
     }
 
     componentDidMount(){
+      console.log('component mounted')
       this.getCoinData() 
       this.getCoinData2()
       this.getHistoricalBTC()
@@ -35,6 +36,13 @@ export class Provider extends Component {
       this.getHistoricalLTC()
       this.getHistoricalEOS()
  }
+
+componentDidUpdate(){
+  console.log('component updated')
+  this.postCoinDataDB()
+}
+
+
     getHistoricalBTC = () => {
       axios.get(`https://vschool-cors.herokuapp.com?url=https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=30&aggregate=1&e=CCCAGG&api_key=${process.env.REACT_APP_NN}`)
       .then(res=> {
@@ -115,6 +123,13 @@ export class Provider extends Component {
 
       })
       
+    }
+
+    postCoinDataDB = () => {
+      axios.post('/crypto', this.state.coinNames)
+      .then(res => {
+        console.log(res.data)
+      })
     }
 
   render() {
