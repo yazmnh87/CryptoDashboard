@@ -8,32 +8,69 @@ class Graph extends Component {
     constructor() {
         super()
         this.state = {
-            coins: [],
-            coinNames: [],
-            currentCoin: "",
-            BTCHISTORICAL: [],
-            ETHHISTORICAL: [],
-            XRPHISTORICAL: [],
-            LTCHISTORICAL: [],
-            EOSHISTORICAL: [],
-            BTC: [],
-            ETH: [],
-            XRP: [],
-            LTC: [],
-            EOS: [],
-            BTCname: [],
-            ETHname: [],
-            XRPname: [],
-            LTCname: [],
-            EOSname: []
+            
           }
     }
+
+    componentDidMount(){
+        this.props.getHistoricalBTC()
+        this.props.getHistoricalETH()
+        this.props.getHistoricalXRP()
+        this.props.getHistoricalLTC()
+        this.props.getHistoricalEOS()
+       
+    }
     
-    render() {
+    render() { 
+            const mappedBTC = this.props.BTCHISTORICAL.Data && this.props.BTCHISTORICAL.Data.map(coin => {
+                const time = coin.time
+                var convertedTime = new Date(time*1000).toLocaleDateString("en-US")
+                const closePrice = coin.close
+                return closePrice
+                })
         
+                const mappedETH = this.props.ETHHISTORICAL.Data && this.props.ETHHISTORICAL.Data.map(coin => {
+                    const time = coin.time
+                    var convertedTime = new Date(time*1000).toLocaleDateString("en-US")
+                    const closePrice = coin.close
+                    return closePrice
+                    })
+                const mappedXRP = this.props.XRPHISTORICAL.Data && this.props.XRPHISTORICAL.Data.map(coin => {
+                    const time = coin.time
+                    var convertedTime = new Date(time*1000).toLocaleDateString("en-US")
+                    const closePrice = coin.close
+                    return closePrice
+                    })
+                const mappedLTC = this.props.LTCHISTORICAL.Data && this.props.LTCHISTORICAL.Data.map(coin => {
+                    const time = coin.time
+                    var convertedTime = new Date(time*1000).toLocaleDateString("en-US")
+                    const closePrice = coin.close
+                    return closePrice
+                    })
+                const mappedEOS = this.props.EOSHISTORICAL.Data && this.props.EOSHISTORICAL.Data.map(coin => {
+                    const time = coin.time
+                    var convertedTime = new Date(time*1000).toLocaleDateString("en-US")
+                    const closePrice = coin.close
+                    return closePrice
+                    })
+                let mapped = {}
+                if(this.props.currentCoin === "BTC") {
+                     mapped = mappedBTC
+                }else if(this.props.currentCoin === "ETH"){
+                    mapped = mappedETH
+                }else if(this.props.currentCoin === "XRP"){
+                    mapped = mappedXRP
+                }else if(this.props.currentCoin === "LTC"){
+                    mapped = mappedLTC
+                }else if(this.props.currentCoin === "EOS"){
+                    mapped = mappedEOS
+                }
+    
         return (
             
-            <div></div>
+            <div>
+                <LineChart data={{...mapped}} />
+            </div>
     )
 }
 }

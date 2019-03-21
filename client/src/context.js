@@ -7,7 +7,7 @@ export default class GlobalProvider extends Component {
     state = {
       coins: [],
       coinNames: [],
-      currentCoin: "BTC",
+      currentCoin: "EOS",
       BTCHISTORICAL: [],
       ETHHISTORICAL: [],
       XRPHISTORICAL: [],
@@ -26,18 +26,18 @@ export default class GlobalProvider extends Component {
       counter: 10
     }
 
-    componentDidMount(){
-      console.log('component mounted')
-      this.getCoinData() 
-      this.getCoinData2()
-      this.getHistoricalBTC()
-      this.getHistoricalETH()
-      this.getHistoricalXRP()
-      this.getHistoricalLTC()
-      this.getHistoricalEOS()
-      this.getCoinNames()
-      this.countDown()
- }
+//     componentDidMount(){
+//       console.log('component mounted')
+//       this.getCoinData() 
+//       this.getCoinData2()
+//       this.getHistoricalBTC()
+//       this.getHistoricalETH()
+//       this.getHistoricalXRP()
+//       this.getHistoricalLTC()
+//       this.getHistoricalEOS()
+//       this.getCoinNames()
+//       this.countDown()
+//  }
 
  countDown = () => {
   setInterval(() => { 
@@ -50,10 +50,10 @@ export default class GlobalProvider extends Component {
     getHistoricalBTC = () => {
       axios.get(`https://vschool-cors.herokuapp.com?url=https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=30&aggregate=1&e=CCCAGG&api_key=${process.env.REACT_APP_NN}`)
       .then(res=> {
+      
         this.setState({
           BTCHISTORICAL: res.data
         })
-        // console.log(this.state.BTCHISTORICAL)
       })
     }
     
