@@ -1,13 +1,40 @@
 import React, {Component} from "react"
-import {Line} from 'chart.js'
-
-class Graph extends Component{
-    render(){
-        return (
-            <div className="Graph">
-
-            </div>
-        )
+import ReactChartkick, { LineChart} from 'react-chartkick'
+import Chart from 'chart.js'
+import {withProvider} from "./context"
+var moment = require('moment')
+ReactChartkick.addAdapter(Chart)
+class Graph extends Component {
+    constructor() {
+        super()
+        this.state = {
+            coins: [],
+            coinNames: [],
+            currentCoin: "",
+            BTCHISTORICAL: [],
+            ETHHISTORICAL: [],
+            XRPHISTORICAL: [],
+            LTCHISTORICAL: [],
+            EOSHISTORICAL: [],
+            BTC: [],
+            ETH: [],
+            XRP: [],
+            LTC: [],
+            EOS: [],
+            BTCname: [],
+            ETHname: [],
+            XRPname: [],
+            LTCname: [],
+            EOSname: []
+          }
     }
+    
+    render() {
+        
+        return (
+            
+            <div></div>
+    )
 }
-export default Graph
+}
+export default withProvider(Graph)
