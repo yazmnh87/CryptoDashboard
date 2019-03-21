@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  GlobalProvider  from './context'
+import { Provider } from './context'
 import NavBar from "./NavBar"
 import CoinInfo from "./CoinInfo"
 import UserProfile from "./UserProfile"
@@ -10,14 +10,14 @@ import Graph from "./Graph"
 class App extends Component {
   render() {
     return (
-      <GlobalProvider>
+      <Provider>
       <div className="AppDiv">
         <NavBar/>
         <Graph />
         <UserProfile/>
-        <CoinInfo />
+        <Coins />
       </div>
-      </GlobalProvider>
+      </Provider>
     );
   }
 }

@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
-import {withProvider} from "./context"
+import {Consumer} from "./context"
 import CoinInfo from "./CoinInfo"
 
 class Coins extends Component {
     render() {
         
-    return (
-        <div>
-        
+        return (
+
+        <Consumer>
+
+            {value=> {
                 
-                {/* if(this.props.coins.length !== 0) console.log(value)
-                 if (this.props !== undefined){
-                    console.log(this.props.coins.DISPLAY ? this.props.coins.DISPLAY.BTC.USD.PRICE : null)
+                if(value.coins.length !== 0) console.log(value)
+                if (value !== undefined){
+                    // console.log(value.coins.DISPLAY ? value.coins.DISPLAY.BTC.USD.PRICE : null)
                 }
                 
                 return (
                     <div className="CoinInfo">
-                        {this.props.coins.DISPLAY ? <CoinInfo price={this.props.coins.DISPLAY.BTC.USD.PRICE} /> : null}
+                        {value.coins.DISPLAY ? <CoinInfo price={value.coins.DISPLAY.BTC.USD.PRICE} /> : null}
                     </div>
-                ) */}
-          
-                </div>
+                )
+            }
+            }
+       
+        </Consumer>
+
     )
-    
     }
 }
 
-export default withProvider(Coins)
+export default Coins;

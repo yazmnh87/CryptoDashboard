@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-const {Consumer, Provider} = React.createContext();
+const Context = React.createContext();
 
 
-export default class GlobalProvider extends Component {
+export class Provider extends Component {
     state = {
       coins: [],
       coinNames: [],
@@ -148,29 +148,11 @@ export default class GlobalProvider extends Component {
 
   render() {
     return (
-        <Provider value={{
-          getCoinData: this.getCoinData,
-          getCoinData2: this.getCoinData2,
-          getHistoricalBTC: this.getHistoricalBTC,
-          getHistoricalETH: this.getHistoricalETH,
-          getHistoricalXRP: this.getHistoricalXRP,
-          getHistoricalLTC: this.getHistoricalLTC,
-          getHistoricalEOS: this.getHistoricalEOS,
-          getCoinNames: this.getCoinNames,
-          countDown: this.countDown,
-          postCoinDataDB: this.postCoinDataDB,
-          ...this.state
-          }}>
+        <Context.Provider value={{...this.props,...this.state}}>
         {this.props.children}
-        </Provider>
+        </Context.Provider>
     )
   }
 }
 
-
-export function withProvider(C) {
-  return props => <Consumer>
-    {value => <C {...value}{...props} />}
-  </Consumer>
-}
-
+export const Consumer = Context.Consumer
