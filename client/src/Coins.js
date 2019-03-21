@@ -11,16 +11,12 @@ class Coins extends Component {
 
             {value=> {
                 
-                if(value.coins.length !== 0) console.log(value)
-                if (value !== undefined){
+                // if(value.coins.leng !== 0) console.log(value)
+                if (value.coins !== undefined){
                     // console.log(value.coins.DISPLAY ? value.coins.DISPLAY.BTC.USD.PRICE : null)
-                }
+                    return <CoinInfo open={value.coinOpen} volume={value.coinVolume} high={value.coinHigh} low={value.coinLow} market={value.coinMrkcap} percentagePrice={value.coinPriceChng} percentage={value.Prctg}/>
                 
-                return (
-                    <div className="CoinInfo">
-                        {value.coins.DISPLAY ? <CoinInfo price={value.coins.DISPLAY.BTC.USD.PRICE} /> : null}
-                    </div>
-                )
+                }
             }
             }
        
