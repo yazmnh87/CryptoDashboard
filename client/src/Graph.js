@@ -2,7 +2,6 @@ import React, {Component} from "react"
 import ReactChartkick, { LineChart} from 'react-chartkick'
 import Chart from 'chart.js'
 import {withProvider} from "./context"
-var moment = require('moment')
 ReactChartkick.addAdapter(Chart)
 class Graph extends Component {
     constructor() {
@@ -69,6 +68,7 @@ class Graph extends Component {
         return (
             
             <div>
+                
                 <LineChart data={{...mapped}} />
             </div>
     )

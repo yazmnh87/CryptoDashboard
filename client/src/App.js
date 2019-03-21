@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import  GlobalProvider  from './context'
 import NavBar from "./NavBar"
-import CoinInfo from "./CoinInfo"
 import UserProfile from "./UserProfile"
 import './App.css';
-import Coins from "./Coins"
-import Graph from "./Graph"
+import CoinInfo from './CoinInfo';
 
 class App extends Component {
   render() {
@@ -13,7 +11,6 @@ class App extends Component {
       <GlobalProvider>
       <div className="AppDiv">
         <NavBar/>
-        <Graph />
         <UserProfile/>
         <CoinInfo />
       </div>
