@@ -1,3 +1,22 @@
 body {
     font-family: 'Play', sans-serif;
 }
+.AppDiv{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    grid-template-areas: 
+      "u n n n n"
+      "u c c c c"
+    ;
+  }
+  .UserProfile{
+    grid-area: u;
+  }
+  .NavBar{
+    grid-area: n;
+  }
+  .CoinInfo{
+    grid-area: c;
+  }

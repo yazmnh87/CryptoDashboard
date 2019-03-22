@@ -9,7 +9,7 @@ app.listen(port, () => {
     console.log(`Port is on ${port}`);
 })
 
-app.use('/crypto' , require('./routes/crytoRoutes'));
+app.use('/crypto' , require('./routes/cryptoRoutes'));
 
 mongoose.connect('mongodb://localhost:27017/crypto', {useNewUrlParser: true})
     .then(() => console.log('Connected to MongoDB'))
