@@ -31,10 +31,10 @@ export default class GlobalProvider extends Component {
       coinPrctg: '',
       coinOpen: '',
       coinPriceChng: '',
-      coinImg: 'https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png',
+      // coinImg: 'https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png',
     }
 
-    componentDidMount(){
+    componentWillMount(){
       console.log('component mounted')
       this.getCoinData() 
       this.getCoinData2()
@@ -133,13 +133,13 @@ export default class GlobalProvider extends Component {
       axios.get(`https://vschool-cors.herokuapp.com?url=https://rest.coinapi.io/v1/assets?apikey=${process.env.REACT_APP_COINAPI}`)
       .then(res => {
         const data = res.data
-        this.setState({
-          BTC: data.slice(0, 1),
-          ETH: data.slice(2, 3),
-          LTC: data.slice(4, 5),
-          XRP: data.slice(8, 9),
-          EOS: data.slice(14, 15)
-        })
+        // this.setState({
+        //   BTC: data.slice(0, 1),
+        //   ETH: data.slice(2, 3),
+        //   LTC: data.slice(4, 5),
+        //   XRP: data.slice(8, 9),
+        //   EOS: data.slice(14, 15)
+        // })
 
       })
       
@@ -163,77 +163,137 @@ export default class GlobalProvider extends Component {
   switchCoin = () => {
     console.log('Function RUNNing')
     console.log(this.state.currentCoin)
-    switch (this.state.currentCoin) {
-      case 'BTC':
-          console.log(this.state.BTC.PRICE)
-          this.setState({
-            coinPrice: this.state.BTC.PRICE,
-            coinVolume: this.state.BTC.TOTALVOLUME24H,
-            coinHigh: this.state.BTC.HIGHDAY,
-            coinLow: this.state.BTC.LOWDAY,
-            coinMrkcap: this.state.BTC.MKTCAP,
-            coinPrctg: this.state.BTC.CHANGEPCTDAY,
-            coinOpen: this.state.BTC.OPENDAY,
-            coinPriceChng: this.state.BTC.CHANGE24HOUR,
-            coinImg: 'https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png'
-            }
-          )
-            break;
-        // console.log(this.state.currentCoin);
-      case 'ETH':
-          console.log(this.state.ETH.PRICE)
-          this.setState({
-            coinPrice: this.state.ETH.PRICE,
-            coinVolume: this.state.ETH.TOTALVOLUME24H,
-            coinHigh: this.state.ETH.HIGHDAY,
-            coinLow: this.state.ETH.LOWDAY,
-            coinMrkcap: this.state.ETH.MKTCAP,
-            coinPrctg: this.state.ETH.CHANGEPCTDAY,
-            coinOpen: this.state.ETH.OPENDAY,
-            coinPriceChng: this.state.ETH.CHANGE24HOUR,
-            coinImg: 'https://www.ethereum.org/images/logos/ETHEREUM-ICON_Black_small.png'
-          
-          })
-          break;
-          case ('LTC'):
-          this.setState({
-            coinPrice: this.state.LTC.PRICE,
-            coinVolume: this.state.LTC.TOTALVOLUME24H,
-            coinHigh: this.state.LTC.HIGHDAY,
-            coinLow: this.state.LTC.LOWDAY,
-            coinMrkcap: this.state.LTC.MKTCAP,
-            coinPrctg: this.state.LTC.CHANGEPCTDAY,
-            coinOpen: this.state.LTC.OPENDAY,
-            coinPriceChng: this.state.LTC.CHANGE24HOUR,
-            coinImg: 'https://cdn4.iconfinder.com/data/icons/cryptocoins/227/LTC-512.png'
-          })
-          break;
-          case ('EOS'):
-          this.setState({
-            coinPrice: this.state.EOS.PRICE,
-            coinVolume: this.state.EOS.TOTALVOLUME24H,
-            coinHigh: this.state.EOS.HIGHDAY,
-            coinLow: this.state.EOS.LOWDAY,
-            coinMrkcap: this.state.EOS.MKTCAP,
-            coinPrctg: this.state.EOS.CHANGEPCTDAY,
-            coinOpen: this.state.EOS.OPENDAY,
-            coinPriceChng: this.state.EOS.CHANGE24HOUR,
-            coinImg: 'https://cdn.iconscout.com/icon/free/png-256/eos-9-646062.png'
-          })
-          break;
-          case ('XRP'):
-          this.setState({
-            coinPrice: this.state.XRP.PRICE,
-            coinVolume: this.state.XRP.TOTALVOLUME24H,
-            coinHigh: this.state.XRP.HIGHDAY,
-            coinLow: this.state.XRP.LOWDAY,
-            coinMrkcap: this.state.XRP.MKTCAP,
-            coinPrctg: this.state.XRP.CHANGEPCTDAY,
-            coinOpen: this.state.XRP.OPENDAY,
-            coinPriceChng: this.state.XRP.CHANGE24HOUR,
-            coinImg: 'https://s2.coinmarketcap.com/static/img/coins/200x200/52.png'
-          })
-      }
+    if(this.state.currentCoin === "BTC"){
+      this.setState({
+        coinPrice: this.state.BTC.PRICE,
+        coinVolume: this.state.BTC.TOTALVOLUME24H,
+        coinHigh: this.state.BTC.HIGHDAY,
+        coinLow: this.state.BTC.LOWDAY,
+        coinMrkcap: this.state.BTC.MKTCAP,
+        coinPrctg: this.state.BTC.CHANGEPCTDAY,
+        coinOpen: this.state.BTC.OPENDAY,
+        coinPriceChng: this.state.BTC.CHANGE24HOUR,
+        // coinImg: 'https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png'
+      })
+    }
+    else if(this.state.currentCoin === "ETH"){
+      this.setState({
+        coinPrice: this.state.ETH.PRICE,
+        coinVolume: this.state.ETH.TOTALVOLUME24H,
+        coinHigh: this.state.ETH.HIGHDAY,
+        coinLow: this.state.ETH.LOWDAY,
+        coinMrkcap: this.state.ETH.MKTCAP,
+        coinPrctg: this.state.ETH.CHANGEPCTDAY,
+        coinOpen: this.state.ETH.OPENDAY,
+        coinPriceChng: this.state.ETH.CHANGE24HOUR,  
+        // coinImg: 'https://www.ethereum.org/images/logos/ETHEREUM-ICON_Black_small.png'
+      })
+    }
+    else if(this.state.currentCoin === "LTC"){
+      this.setState({
+        coinPrice: this.state.LTC.PRICE,
+        coinVolume: this.state.LTC.TOTALVOLUME24H,
+        coinHigh: this.state.LTC.HIGHDAY,
+        coinLow: this.state.LTC.LOWDAY,
+        coinMrkcap: this.state.LTC.MKTCAP,
+        coinPrctg: this.state.LTC.CHANGEPCTDAY,
+        coinOpen: this.state.LTC.OPENDAY,
+        coinPriceChng: this.state.LTC.CHANGE24HOUR,
+        // coinImg: 'https://cdn4.iconfinder.com/data/icons/cryptocoins/227/LTC-512.png'
+      })
+    }
+    else if(this.state.currentCoin === "EOS"){
+      this.setState({
+        coinPrice: this.state.EOS.PRICE,
+        coinVolume: this.state.EOS.TOTALVOLUME24H,
+        coinHigh: this.state.EOS.HIGHDAY,
+        coinLow: this.state.EOS.LOWDAY,
+        coinMrkcap: this.state.EOS.MKTCAP,
+        coinPrctg: this.state.EOS.CHANGEPCTDAY,
+        coinOpen: this.state.EOS.OPENDAY,
+        coinPriceChng: this.state.EOS.CHANGE24HOUR,
+        // coinImg: 'https://cdn.iconscout.com/icon/free/png-256/eos-9-646062.png'
+      })
+    }
+    else if(this.state.currentCoin === "XRP"){
+      this.setState({
+        coinPrice: this.state.XRP.PRICE,
+        coinVolume: this.state.XRP.TOTALVOLUME24H,
+        coinHigh: this.state.XRP.HIGHDAY,
+        coinLow: this.state.XRP.LOWDAY,
+        coinMrkcap: this.state.XRP.MKTCAP,
+        coinPrctg: this.state.XRP.CHANGEPCTDAY,
+        coinOpen: this.state.XRP.OPENDAY,
+        coinPriceChng: this.state.XRP.CHANGE24HOUR,
+        // coinImg: '"https://cdn.freebiesupply.com/logos/large/2x/ripple-2-logo-png-transparent.png'
+      })
+    }
+
+    // switch (this.state.currentCoin) {
+    //   case 'BTC':
+    //       console.log(this.state.BTC.PRICE)
+    //       this.setState({
+    //         coinPrice: this.state.BTC.PRICE,
+    //         coinVolume: this.state.BTC.TOTALVOLUME24H,
+    //         coinHigh: this.state.BTC.HIGHDAY,
+    //         coinLow: this.state.BTC.LOWDAY,
+    //         coinMrkcap: this.state.BTC.MKTCAP,
+    //         coinPrctg: this.state.BTC.CHANGEPCTDAY,
+    //         coinOpen: this.state.BTC.OPENDAY,
+    //         coinPriceChng: this.state.BTC.CHANGE24HOUR,
+    //         }
+    //       )
+    //         break;
+    //     // console.log(this.state.currentCoin);
+    //   case 'ETH':
+    //       console.log(this.state.ETH.PRICE)
+    //       this.setState({
+    //         coinPrice: this.state.ETH.PRICE,
+    //         coinVolume: this.state.ETH.TOTALVOLUME24H,
+    //         coinHigh: this.state.ETH.HIGHDAY,
+    //         coinLow: this.state.ETH.LOWDAY,
+    //         coinMrkcap: this.state.ETH.MKTCAP,
+    //         coinPrctg: this.state.ETH.CHANGEPCTDAY,
+    //         coinOpen: this.state.ETH.OPENDAY,
+    //         coinPriceChng: this.state.ETH.CHANGE24HOUR,          
+    //       })
+    //       break;
+    //       case ('LTC'):
+    //       this.setState({
+            // coinPrice: this.state.LTC.PRICE,
+            // coinVolume: this.state.LTC.TOTALVOLUME24H,
+            // coinHigh: this.state.LTC.HIGHDAY,
+            // coinLow: this.state.LTC.LOWDAY,
+            // coinMrkcap: this.state.LTC.MKTCAP,
+            // coinPrctg: this.state.LTC.CHANGEPCTDAY,
+            // coinOpen: this.state.LTC.OPENDAY,
+            // coinPriceChng: this.state.LTC.CHANGE24HOUR,
+    //       })
+    //       break;
+    //       case ('EOS'):
+    //       this.setState({
+    //         coinPrice: this.state.EOS.PRICE,
+            // coinVolume: this.state.EOS.TOTALVOLUME24H,
+            // coinHigh: this.state.EOS.HIGHDAY,
+            // coinLow: this.state.EOS.LOWDAY,
+            // coinMrkcap: this.state.EOS.MKTCAP,
+            // coinPrctg: this.state.EOS.CHANGEPCTDAY,
+            // coinOpen: this.state.EOS.OPENDAY,
+            // coinPriceChng: this.state.EOS.CHANGE24HOUR,
+    //       })
+    //       break;
+    //       case ('XRP'):
+    //       this.setState({
+            // coinPrice: this.state.XRP.PRICE,
+            // coinVolume: this.state.XRP.TOTALVOLUME24H,
+            // coinHigh: this.state.XRP.HIGHDAY,
+            // coinLow: this.state.XRP.LOWDAY,
+            // coinMrkcap: this.state.XRP.MKTCAP,
+            // coinPrctg: this.state.XRP.CHANGEPCTDAY,
+            // coinOpen: this.state.XRP.OPENDAY,
+            // coinPriceChng: this.state.XRP.CHANGE24HOUR,
+    //       })
+    //   }
   }
 
   render() {

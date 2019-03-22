@@ -17,7 +17,6 @@ class Graph extends Component {
         this.props.getHistoricalXRP()
         this.props.getHistoricalLTC()
         this.props.getHistoricalEOS()
-       
     }
     
     render() { 
@@ -67,10 +66,9 @@ class Graph extends Component {
     
         return (
             
-            <div>
-                
+            <>
                 <LineChart data={{...mapped}} />
-            </div>
+            </>
     )
 }
 }

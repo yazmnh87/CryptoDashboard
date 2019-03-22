@@ -4,7 +4,7 @@ import {withProvider} from "./context"
 import Coins from "./Coins"
 
 const CoinInfo = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <div className='CoinInfo'>
             <Graph style={{width: "95%", height:"62vh", marginLeft:"3%", marginRight:"0%"}}/>
