@@ -109,78 +109,7 @@ export default class GlobalProvider extends Component {
     getCoinData = () => {
       axios.get(`https://vschool-cors.herokuapp.com?url=https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH,EOS,XRP,BTC,LTC&tsyms=BTC,USD,EUR&api_key=${process.env.REACT_APP_MM}`)
       .then(res => {
-        
-        if (this.state.currentCoin === "BTC"){
-          this.setState({
-            coins: res.data,
-            BTC: res.data.DISPLAY.BTC.USD,
-            coinPrice: res.data.DISPLAY.BTC.USD.PRICE,
-            coinVolume: res.data.DISPLAY.BTC.USD.TOTALVOLUME24H,
-            coinHigh: res.data.DISPLAY.BTC.USD.HIGHDAY,
-            coinLow: res.data.DISPLAY.BTC.USD.LOWDAY,
-            coinMrkcap: res.data.DISPLAY.BTC.USD.MKTCAP,
-            coinPrctg: res.data.DISPLAY.BTC.USD.CHANGEPCTDAY,
-            coinOpen: res.data.DISPLAY.BTC.USD.OPENDAY,
-            coinPriceChng: res.data.DISPLAY.BTC.USD.CHANGE24HOUR,
-          })
-        }
-        else if (this.state.currentCoin === "ETH"){
-          this.setState({
-            coins: res.data,
-            ETH: res.data.DISPLAY.ETH.USD,
-            coinPrice: res.data.DISPLAY.ETH.USD.PRICE,
-            coinVolume: res.data.DISPLAY.ETH.USD.TOTALVOLUME24H,
-            coinHigh: res.data.DISPLAY.ETH.USD.HIGHDAY,
-            coinLow: res.data.DISPLAY.ETH.USD.LOWDAY,
-            coinMrkcap: res.data.DISPLAY.ETH.USD.MKTCAP,
-            coinPrctg: res.data.DISPLAY.ETH.USD.CHANGEPCTDAY,
-            coinOpen: res.data.DISPLAY.ETH.USD.OPENDAY,
-            coinPriceChng: res.data.DISPLAY.ETH.USD.CHANGE24HOUR,
-          })
-        }
-        else if (this.state.currentCoin === "LTC"){
-          this.setState({
-            coins: res.data,
-            XRP: res.data.DISPLAY.LTC.USD,
-            coinPrice: res.data.DISPLAY.LTC.USD.PRICE,
-            coinVolume: res.data.DISPLAY.LTC.USD.TOTALVOLUME24H,
-            coinHigh: res.data.DISPLAY.LTC.USD.HIGHDAY,
-            coinLow: res.data.DISPLAY.LTC.USD.LOWDAY,
-            coinMrkcap: res.data.DISPLAY.LTC.USD.MKTCAP,
-            coinPrctg: res.data.DISPLAY.LTC.USD.CHANGEPCTDAY,
-            coinOpen: res.data.DISPLAY.LTC.USD.OPENDAY,
-            coinPriceChng: res.data.DISPLAY.LTC.USD.CHANGE24HOUR,
-          })
-        }
-        else if (this.state.currentCoin === "XRP"){
-          this.setState({
-            coins: res.data,
-            LTC: res.data.DISPLAY.XRP.USD,
-            coinPrice: res.data.DISPLAY.XRP.USD.PRICE,
-            coinVolume: res.data.DISPLAY.XRP.USD.TOTALVOLUME24H,
-            coinHigh: res.data.DISPLAY.XRP.USD.HIGHDAY,
-            coinLow: res.data.DISPLAY.XRP.USD.LOWDAY,
-            coinMrkcap: res.data.DISPLAY.XRP.USD.MKTCAP,
-            coinPrctg: res.data.DISPLAY.XRP.USD.CHANGEPCTDAY,
-            coinOpen: res.data.DISPLAY.XRP.USD.OPENDAY,
-            coinPriceChng: res.data.DISPLAY.XRP.USD.CHANGE24HOUR,
-          })
-        }
-        else if (this.state.currentCoin === "EOS"){
-          this.setState({
-            coins: res.data,
-            EOS: res.data.DISPLAY.EOS.USD,
-            coinPrice: res.data.DISPLAY.EOS.USD.PRICE,
-            coinVolume: res.data.DISPLAY.EOS.USD.TOTALVOLUME24H,
-            coinHigh: res.data.DISPLAY.EOS.USD.HIGHDAY,
-            coinLow: res.data.DISPLAY.EOS.USD.LOWDAY,
-            coinMrkcap: res.data.DISPLAY.EOS.USD.MKTCAP,
-            coinPrctg: res.data.DISPLAY.EOS.USD.CHANGEPCTDAY,
-            coinOpen: res.data.DISPLAY.EOS.USD.OPENDAY,
-            coinPriceChng: res.data.DISPLAY.EOS.USD.CHANGE24HOUR,
-          })
-        }
-      })
+              })
     }
 
     // getCoinData2 = () => {

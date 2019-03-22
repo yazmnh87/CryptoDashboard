@@ -14,7 +14,7 @@ class Coins extends Component {
                 <h2 style={{width:"99%",borderBottom: "solid white"}}>24 Hr High: {this.props.coinHigh}<p style={{display:"inline-block", color:"yellow"}}></p></h2>
                 <h2 style={{width:"99%",borderBottom: "solid white"}}>24 hr low: {this.props.coinLow} <p style={{display:"inline-block", color:"yellow"}}></p></h2>
                 <h2 style={{width:"99%",borderBottom: "solid white"}}>Market Cap: {this.props.coinMrkcap}<p style={{display:"inline-block", color:"yellow"}}></p></h2>
-                <h2 style={{width:"99%",borderBottom: "solid white"}}>Day Price Change: {this.props.coinPrctg} <p style={{display:"inline-block", color:"yellow"}}></p></h2>
+                <h2 style={{width:"99%",borderBottom: "solid white"}}>Day Price Change: {this.props.coinPriceChng} <p style={{display:"inline-block", color:"yellow"}}></p></h2>
                 </div>
                 </div>
         )
