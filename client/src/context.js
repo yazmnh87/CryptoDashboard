@@ -34,11 +34,11 @@ export default class GlobalProvider extends Component {
       // coinImg: 'https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png',
     }
 
-    componentWillMount(){
+    componentWillUpdate(){
       console.log('component mounted')
       this.getCoinData() 
-      this.getCoinData2()
-      this.getCoinNames()
+      // this.getCoinData2()
+      // this.getCoinNames()
       // this.countDown()
  }
 
@@ -46,7 +46,7 @@ export default class GlobalProvider extends Component {
   setInterval(() => { 
      console.log("running")
     this.postCoinDataDB();
-    }, 10000)
+    }, 100000)
 }
 
 
@@ -96,54 +96,108 @@ export default class GlobalProvider extends Component {
         // console.log(this.state.EOSHISTORICAL)
       })
     }
-    getCoinNames = () => {
-       axios.get(`https://vschool-cors.herokuapp.com?url=https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH,EOS,XRP,BTC,LTC&tsyms=USD&api_key=${process.env.REACT_APP_MM}`)
-        .then(res => {
-          this.setState({
-            coinNames: res.data.DISPLAY.BTC
-          })
-          // console.log('coinNames')
-          // console.log(this.state.coinNames)
-    })}
+    // getCoinNames = () => {
+    //    axios.get(`https://vschool-cors.herokuapp.com?url=https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH,EOS,XRP,BTC,LTC&tsyms=USD&api_key=${process.env.REACT_APP_MM}`)
+    //     .then(res => {
+    //       this.setState({
+    //         coinNames: res.data.DISPLAY.BTC
+    //       })
+    //       // console.log('coinNames')
+    //       // console.log(this.state.coinNames)
+    // })}
 
     getCoinData = () => {
       axios.get(`https://vschool-cors.herokuapp.com?url=https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH,EOS,XRP,BTC,LTC&tsyms=BTC,USD,EUR&api_key=${process.env.REACT_APP_MM}`)
       .then(res => {
         
-        this.setState({
-          coins: res.data,
-          BTC: res.data.DISPLAY.BTC.USD,
-          ETH: res.data.DISPLAY.ETH.USD,
-          XRP: res.data.DISPLAY.LTC.USD,
-          LTC: res.data.DISPLAY.XRP.USD,
-          EOS: res.data.DISPLAY.EOS.USD,
-          coinPrice: res.data.DISPLAY.BTC.USD.PRICE,
-          coinVolume: res.data.DISPLAY.BTC.USD.TOTALVOLUME24H,
-          coinHigh: res.data.DISPLAY.BTC.USD.HIGHDAY,
-          coinLow: res.data.DISPLAY.BTC.USD.LOWDAY,
-          coinMrkcap: res.data.DISPLAY.BTC.USD.MKTCAP,
-          coinPrctg: res.data.DISPLAY.BTC.USD.CHANGEPCTDAY,
-          coinOpen: res.data.DISPLAY.BTC.USD.OPENDAY,
-          coinPriceChng: res.data.DISPLAY.BTC.USD.CHANGE24HOUR,
-        })
+        if (this.state.currentCoin === "BTC"){
+          this.setState({
+            coins: res.data,
+            BTC: res.data.DISPLAY.BTC.USD,
+            coinPrice: res.data.DISPLAY.BTC.USD.PRICE,
+            coinVolume: res.data.DISPLAY.BTC.USD.TOTALVOLUME24H,
+            coinHigh: res.data.DISPLAY.BTC.USD.HIGHDAY,
+            coinLow: res.data.DISPLAY.BTC.USD.LOWDAY,
+            coinMrkcap: res.data.DISPLAY.BTC.USD.MKTCAP,
+            coinPrctg: res.data.DISPLAY.BTC.USD.CHANGEPCTDAY,
+            coinOpen: res.data.DISPLAY.BTC.USD.OPENDAY,
+            coinPriceChng: res.data.DISPLAY.BTC.USD.CHANGE24HOUR,
+          })
+        }
+        else if (this.state.currentCoin === "ETH"){
+          this.setState({
+            coins: res.data,
+            ETH: res.data.DISPLAY.ETH.USD,
+            coinPrice: res.data.DISPLAY.ETH.USD.PRICE,
+            coinVolume: res.data.DISPLAY.ETH.USD.TOTALVOLUME24H,
+            coinHigh: res.data.DISPLAY.ETH.USD.HIGHDAY,
+            coinLow: res.data.DISPLAY.ETH.USD.LOWDAY,
+            coinMrkcap: res.data.DISPLAY.ETH.USD.MKTCAP,
+            coinPrctg: res.data.DISPLAY.ETH.USD.CHANGEPCTDAY,
+            coinOpen: res.data.DISPLAY.ETH.USD.OPENDAY,
+            coinPriceChng: res.data.DISPLAY.ETH.USD.CHANGE24HOUR,
+          })
+        }
+        else if (this.state.currentCoin === "LTC"){
+          this.setState({
+            coins: res.data,
+            XRP: res.data.DISPLAY.LTC.USD,
+            coinPrice: res.data.DISPLAY.LTC.USD.PRICE,
+            coinVolume: res.data.DISPLAY.LTC.USD.TOTALVOLUME24H,
+            coinHigh: res.data.DISPLAY.LTC.USD.HIGHDAY,
+            coinLow: res.data.DISPLAY.LTC.USD.LOWDAY,
+            coinMrkcap: res.data.DISPLAY.LTC.USD.MKTCAP,
+            coinPrctg: res.data.DISPLAY.LTC.USD.CHANGEPCTDAY,
+            coinOpen: res.data.DISPLAY.LTC.USD.OPENDAY,
+            coinPriceChng: res.data.DISPLAY.LTC.USD.CHANGE24HOUR,
+          })
+        }
+        else if (this.state.currentCoin === "XRP"){
+          this.setState({
+            coins: res.data,
+            LTC: res.data.DISPLAY.XRP.USD,
+            coinPrice: res.data.DISPLAY.XRP.USD.PRICE,
+            coinVolume: res.data.DISPLAY.XRP.USD.TOTALVOLUME24H,
+            coinHigh: res.data.DISPLAY.XRP.USD.HIGHDAY,
+            coinLow: res.data.DISPLAY.XRP.USD.LOWDAY,
+            coinMrkcap: res.data.DISPLAY.XRP.USD.MKTCAP,
+            coinPrctg: res.data.DISPLAY.XRP.USD.CHANGEPCTDAY,
+            coinOpen: res.data.DISPLAY.XRP.USD.OPENDAY,
+            coinPriceChng: res.data.DISPLAY.XRP.USD.CHANGE24HOUR,
+          })
+        }
+        else if (this.state.currentCoin === "EOS"){
+          this.setState({
+            coins: res.data,
+            EOS: res.data.DISPLAY.EOS.USD,
+            coinPrice: res.data.DISPLAY.EOS.USD.PRICE,
+            coinVolume: res.data.DISPLAY.EOS.USD.TOTALVOLUME24H,
+            coinHigh: res.data.DISPLAY.EOS.USD.HIGHDAY,
+            coinLow: res.data.DISPLAY.EOS.USD.LOWDAY,
+            coinMrkcap: res.data.DISPLAY.EOS.USD.MKTCAP,
+            coinPrctg: res.data.DISPLAY.EOS.USD.CHANGEPCTDAY,
+            coinOpen: res.data.DISPLAY.EOS.USD.OPENDAY,
+            coinPriceChng: res.data.DISPLAY.EOS.USD.CHANGE24HOUR,
+          })
+        }
       })
     }
 
-    getCoinData2 = () => {
-      axios.get(`https://vschool-cors.herokuapp.com?url=https://rest.coinapi.io/v1/assets?apikey=${process.env.REACT_APP_COINAPI}`)
-      .then(res => {
-        const data = res.data
-        this.setState({
-          BTCname: data.slice(0, 1),
-          ETHname: data.slice(2, 3),
-          LTCname: data.slice(4, 5),
-          XRPname: data.slice(8, 9),
-          EOSname: data.slice(14, 15)
-        })
+    // getCoinData2 = () => {
+    //   axios.get(`https://vschool-cors.herokuapp.com?url=https://rest.coinapi.io/v1/assets?apikey=${process.env.REACT_APP_COINAPI}`)
+    //   .then(res => {
+    //     const data = res.data
+    //     this.setState({
+    //       BTCname: data.slice(0, 1),
+    //       ETHname: data.slice(2, 3),
+    //       LTCname: data.slice(4, 5),
+    //       XRPname: data.slice(8, 9),
+    //       EOSname: data.slice(14, 15)
+    //     })
 
-      })
+    //   })
       
-    }
+    // }
 
     postCoinDataDB = () => {
      axios.post('/crypto', this.state.coinNames)
