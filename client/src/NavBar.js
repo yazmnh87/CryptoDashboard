@@ -15,8 +15,8 @@ const NavBar = () => {
       }
     return (
         <div className="navbar">
-            <a href="#home">Home</a>
-            <a href="#news">News</a>
+            <Link to="/">Home</Link>
+            <Link to="/news">News</Link>
             <div className="dropdown">
             <button className="dropbtn" onClick={myFunction}>Dropdown
             <i className="fa fa-caret-down"></i>

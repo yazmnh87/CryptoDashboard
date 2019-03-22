@@ -9,6 +9,9 @@ body {
     grid-template-areas: 
       "u n n n n"
       "u c c c c"
+      "u c c c c"
+      "u c c c c"
+      "u c c c c"
     ;
   }
   .UserProfile{
@@ -56,7 +59,7 @@ body {
   }
   
   .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-    background-color: #cdf6f8
+    /* background-color: #cdf6f8 */
   }
   
   .dropdown-content {
@@ -64,14 +67,14 @@ body {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
   
   .dropdown-content a {
     float: none;
     color: black;
-    padding: 12px 16px;
+    /* padding: 12px 6px; */
     text-decoration: none;
     display: block;
     text-align: left;
