@@ -2,11 +2,30 @@ import React from 'react';
 import {Link} from "react-router-dom"
 
 const NavBar = () => {
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+          }
+        }
+      }
     return (
-        <div className="NavBar" style={{display: "flex", flexDirection:"row",justifyContent:"space-around", height:30, fontSize:"1.4em" }}>
-            <Link to="" style={{color:"#5ae0e7", textDecoration:"none"}}>Dashboard</Link>
-            <Link to="" style={{color:"#5ae0e7", textDecoration:"none"}}>Coin List</Link>
-            <Link to="" style={{color:"#5ae0e7", textDecoration:"none"}}>Setting</Link>
+        <div className="navbar">
+            <a href="#home">Home</a>
+            <a href="#news">News</a>
+            <div className="dropdown">
+            <button className="dropbtn" onClick={myFunction}>Dropdown
+            <i className="fa fa-caret-down"></i>
+                </button>
+        <div className="dropdown-content" id="myDropdown">
+             <a href="#">Light Theme</a>
+             <a href="#">Dark Theme</a>
+        </div>
+        </div> 
         </div>
     );
 };
