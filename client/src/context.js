@@ -39,7 +39,7 @@ export default class GlobalProvider extends Component {
       this.getCoinData() 
       this.getCoinData2()
       this.getCoinNames()
-      this.countDown()
+      // this.countDown()
  }
 
  countDown = () => {
@@ -133,13 +133,13 @@ export default class GlobalProvider extends Component {
       axios.get(`https://vschool-cors.herokuapp.com?url=https://rest.coinapi.io/v1/assets?apikey=${process.env.REACT_APP_COINAPI}`)
       .then(res => {
         const data = res.data
-        // this.setState({
-        //   BTC: data.slice(0, 1),
-        //   ETH: data.slice(2, 3),
-        //   LTC: data.slice(4, 5),
-        //   XRP: data.slice(8, 9),
-        //   EOS: data.slice(14, 15)
-        // })
+        this.setState({
+          BTCname: data.slice(0, 1),
+          ETHname: data.slice(2, 3),
+          LTCname: data.slice(4, 5),
+          XRPname: data.slice(8, 9),
+          EOSname: data.slice(14, 15)
+        })
 
       })
       
