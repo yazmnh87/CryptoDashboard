@@ -4,12 +4,16 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-preset-react-app": "^7.0.0",
+    "chart.js": "^2.8.0",
+    "chartkick": "^3.0.2",
     "react": "^16.8.4",
+    "react-chartkick": "^0.3.0",
     "react-dom": "^16.8.4",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8"
   },
-  "Proxy": "http://localhost:6669",
+  "proxy": "http://localhost:6669",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

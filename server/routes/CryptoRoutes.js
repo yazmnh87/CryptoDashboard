@@ -15,5 +15,14 @@ cryptoRoute.route('/')
             }
         })
     })
+    .post((req, res) => {
+       const coinInfo = new Crypto(req.body)
+       console.log(req.body)
+       coinInfo.save((err) => {
+           if(err) return res.status(500).send(err)
+        return res.status(200).send(coinInfo)
+        })
+    })
+
 
     module.exports = cryptoRoute;
