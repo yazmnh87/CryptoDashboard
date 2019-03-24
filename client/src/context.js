@@ -35,7 +35,7 @@ export default class GlobalProvider extends Component {
     }
 
     componentWillUpdate(){
-      console.log('component mounted')
+      // console.log('component mounted')
       this.getCoinData() 
       // this.getCoinData2()
       // this.getCoinNames()

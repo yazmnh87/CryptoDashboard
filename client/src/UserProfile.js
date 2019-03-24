@@ -12,10 +12,11 @@ class UserProfile extends Component {
 //         // this.props.countDown()
 //    }
    render() {
-       console.log(this.props.coinPrice + "currr")
+    //    console.log(this.props.coinPrice + "currr")
+       const convert = parseFloat(this.props.coinPrctg)
     return (
                 
-         <div className="UserProfile" style={{borderRight:"solid white", height:"100vh"}}>
+         <div className="UserProfile" style={{borderRight:"solid white", height:"auto"}}>
             <img style={{width:250, display:'block',margin:"auto", marginTop:15}} src={User} alt=""/>
             <h1 style={{textAlign:"center"}}>User6669</h1>
             <hr style={{marginTop:"-10px", marginBottom:"-10px"}}/>
@@ -31,7 +32,7 @@ class UserProfile extends Component {
             <br></br>
 
 
-            <h1 style={{textAlign:"center"}}>{this.props.currentCoin && this.props.currentCoin === "BTC" ? this.props.coinPrctg : this.props.currentCoin && this.props.currentCoin === "ETH" ? this.props.coinPrctg : this.props.currentCoin && this.props.currentCoin === "LTC" ? this.props.coinPrctg : this.props.currentCoin && this.props.currentCoin === "EOS" ? this.props.coinPrctg : this.props.currentCoin && this.props.currentCoin === "XRP" ? this.props.coinPrctg : null}%</h1>
+            <h1 style={convert < 0 ? {color:"red", textAlign:"center"} : {color:"green", textAlign:"center"} }>{this.props.currentCoin && this.props.currentCoin === "BTC" ? this.props.coinPrctg : this.props.currentCoin && this.props.currentCoin === "ETH" ? this.props.coinPrctg : this.props.currentCoin && this.props.currentCoin === "LTC" ? this.props.coinPrctg : this.props.currentCoin && this.props.currentCoin === "EOS" ? this.props.coinPrctg : this.props.currentCoin && this.props.currentCoin === "XRP" ? this.props.coinPrctg : null}%</h1>
             <br></br>
 
 

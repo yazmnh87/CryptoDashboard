@@ -6,8 +6,13 @@ class Coins extends Component {
     render() {
         const price = [this.props.coinPriceChng]
         const spliced = price.splice(3)
-        console.log(spliced)
-        console.log(this.props.coinPriceChng)
+        // console.log(spliced)
+        console.log(typeof(this.props.coinPriceChng))
+        const sliced = this.props.coinPriceChng.slice(2)
+        console.log(sliced)
+        const convert1 = parseFloat(sliced)
+        console.log(typeof(convert1))
+        console.log(convert1)
         return (
             <div>
             <hr style={{marginRight:0}}/>
@@ -17,7 +22,7 @@ class Coins extends Component {
                 <h2 style={{width:"99%",borderBottom: "solid white"}}>24 Hr High: <br></br><p style={{display:"inline-block", color:"lime"}}>{this.props.coinHigh}</p></h2>
 
 
-                <h2 style={{width:"99%",borderBottom: "solid white"}}>Day Price Change: <br></br> {+this.props.coinPriceChng && +this.props.coinPriceChng > 0 ? <p className="coinpricered">{this.props.coinPriceChng} </p> : <p className="coinpricegreen">{this.props.coinPriceChng} </p>}</h2>
+                <h2 style={{width:"99%",borderBottom: "solid white"}}>Day Price Change: <br></br> {+this.props.coinPriceChng && +this.props.coinPriceChng > 0 ? <p className="coinpricered">{this.props.coinPriceChng} </p> : <p className="coinpricegreen"  style={convert1 < 0 ? {color:"red"} : {color:"lime"} }>{this.props.coinPriceChng} </p>}</h2>
 
 
                 <h2 style={{width:"99%",borderBottom: "solid white"}}>Market Cap: <br></br> <p style={{display:"inline-block", color:"lime"}}>{this.props.coinMrkcap}</p></h2>
