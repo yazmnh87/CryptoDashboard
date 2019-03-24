@@ -31,10 +31,10 @@ export default class GlobalProvider extends Component {
       coinPrctg: '',
       coinOpen: '',
       coinPriceChng: '',
-      // coinImg: 'https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png',
+      news: []
     }
 
-    componentWillUpdate(){
+    componentWillMount(){
       // console.log('component mounted')
       this.getCoinData() 
       // this.getCoinData2()
@@ -47,6 +47,16 @@ export default class GlobalProvider extends Component {
      console.log("running")
     this.postCoinDataDB();
     }, 100000)
+}
+
+
+getNews = () => {
+  axios.get(`https://vschool-cors.herokuapp.com?url=https://newsapi.org/v2/top-headlines?sources=crypto-coins-news&apiKey=${process.env.REACT_APP_NS}`)
+  .then(res=> {
+    this.setState({
+    news: res.data
+  })
+  })
 }
 
 
@@ -230,6 +240,9 @@ export default class GlobalProvider extends Component {
         // coinImg: 'https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png'
       })
     }
+
+    
+
     else if(this.state.currentCoin === "ETH"){
       this.setState({
         coinPrice: this.state.ETH.PRICE,
@@ -364,6 +377,7 @@ export default class GlobalProvider extends Component {
           countDown: this.countDown,
           switchCoin: this.switchCoin,
           handleChange: this.handleChange,
+          getNews: this.getNews,
           ...this.state
           }}>
         {this.props.children}
