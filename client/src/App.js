@@ -6,6 +6,7 @@ import CoinInfo from './CoinInfo';
 import {Switch, Route} from "react-router-dom"
 import News from "./News"
 import Footer from "./Footer"
+import Ticker from './Ticker'
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
       <div className="AppDiv">
         <NavBar/>
         <UserProfile/>
+        <Ticker />
         <Switch>
           <Route exact path="/" component={CoinInfo}/>
           <Route path="/news" component={News}/>

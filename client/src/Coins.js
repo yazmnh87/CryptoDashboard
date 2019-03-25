@@ -7,12 +7,8 @@ class Coins extends Component {
         const price = [this.props.coinPriceChng]
         const spliced = price.splice(3)
         // console.log(spliced)
-        console.log(typeof(this.props.coinPriceChng))
         const sliced = this.props.coinPriceChng !== undefined ? this.props.coinPriceChng.slice(2) : this.props.coinPriceChng
-        console.log(sliced)
         const convert1 = parseFloat(sliced)
-        console.log(typeof(convert1))
-        console.log(convert1)
         return (
             <div>
             <hr style={{marginRight:0}}/>
