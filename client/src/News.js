@@ -4,6 +4,7 @@ import { withProvider } from "./context"
 class News extends Component {
     componentDidMount() {
         this.props.getNews()
+        console.log("mounted")
     }
 
     render() {
@@ -26,7 +27,7 @@ class News extends Component {
             )
         })
         return (
-            <div className="About" style={{ textAlign: "center", }}>
+            <div className="News" style={{ textAlign: "center", }}>
                 {mappedNews}
             </div>
         );

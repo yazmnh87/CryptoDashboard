@@ -4,23 +4,27 @@ body {
   .UserProfile{
     grid-area: u;
     position: fixed;
-    width: 305px;
+    width: 250px;
   }
   .navbar{
     grid-area: n;
-    margin-left:310px
+    margin-left:260px
   }
   .CoinInfo{
     grid-area: c;
-    margin-left:310px
+    margin-left:250px
   }
   .Footer{
     grid-area: f;
-    margin-left:310px
+    margin-left:260px
   }
   .About{
-    margin-left:310px;
+    margin-left:260px;
     grid-area: a;
+  }
+  .News{
+    margin-left:240px;
+    grid-area: s
   }
   .navbar {
     overflow: hidden;
@@ -106,13 +110,13 @@ body {
       grid-area: c;
       margin-left:0px
     }
-    .Footer{
-      grid-area: f;
-      margin-left:0px
-    }
     .About{
       margin-left:0px;
       grid-area: a;
+    }
+    .News{
+      margin-left:0px;
+      grid-area: s
     }
     .AppDiv{
       display: grid;
@@ -124,6 +128,19 @@ body {
         "u u u u u"
         "c c c c c"
         "a a a a a"
+        "s s s s s"
       ;
+    }
+  }
+
+  @media (max-width: 380px){
+    .CoinInfo{
+      grid-area: c;
+      margin-left:0px;
+    }
+    .About{
+      margin-left:0px;
+      grid-area: a;
+      /* margin-top: -10% */
     }
   }

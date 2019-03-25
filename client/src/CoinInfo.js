@@ -6,7 +6,7 @@ import Coins from "./Coins"
 const CoinInfo = (props) => {
     return (
         <div className='CoinInfo'>
-            <Graph style={{ width: "95%", height: "62vh", marginLeft: "3%", marginRight: "0%" }} />
+            <Graph style={{ height: "62vh", marginLeft: "3%", marginRight: "0%" }} />
             <Coins />
 
         </div>
