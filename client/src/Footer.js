@@ -6,7 +6,7 @@ const Footer = () => {
             <h1 style={{display:"inline-block", textAlign:"center"}}>Ibrahim Mohamed</h1>
             <h1 style={{display:"inline-block", textAlign:"center"}}>Stuart Gardner</h1>
             <h1 style={{display:"inline-block", textAlign:"center"}}>Bill Violette</h1>
-            <h1 style={{display:"inline-block", textAlign:"center"}}>Ahbi Tiwari</h1>
+            <h1 style={{display:"inline-block", textAlign:"center"}}>Abhi Tiwari</h1>
         </div>
     );
 };

@@ -19,11 +19,9 @@ body {
   }
   .navbar{
     grid-area: n;
-    position: relative;
   }
   .CoinInfo{
     grid-area: c;
-    position: relative;
   }
   .Footer{
     grid-area: f;
