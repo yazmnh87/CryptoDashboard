@@ -26,7 +26,7 @@ class News extends Component {
             )
         })
         return (
-            <div className="CoinInfo" style={{ textAlign: "center", }}>
+            <div className="About" style={{ textAlign: "center", }}>
                 {mappedNews}
             </div>
         );

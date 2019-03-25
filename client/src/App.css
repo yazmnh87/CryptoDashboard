@@ -4,22 +4,22 @@ body {
   .UserProfile{
     grid-area: u;
     position: fixed;
-    width: 281px;
+    width: 305px;
   }
   .navbar{
     grid-area: n;
-    margin-left:270px
+    margin-left:310px
   }
   .CoinInfo{
     grid-area: c;
-    margin-left:270px
+    margin-left:310px
   }
   .Footer{
     grid-area: f;
-    margin-left:270px
+    margin-left:310px
   }
   .About{
-    margin-left:290px;
+    margin-left:310px;
     grid-area: a;
   }
   .navbar {
@@ -96,6 +96,7 @@ body {
     .UserProfile{
       grid-area: u;
       position: static;
+      width: auto
     }
     .navbar{
       grid-area: n;
@@ -108,6 +109,10 @@ body {
     .Footer{
       grid-area: f;
       margin-left:0px
+    }
+    .About{
+      margin-left:0px;
+      grid-area: a;
     }
     .AppDiv{
       display: grid;
