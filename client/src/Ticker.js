@@ -26,7 +26,7 @@ class Ticker extends Component {
         const convert4 = parseFloat(slicedLTC)
         const convert5 = parseFloat(slicedEOS)
         return (
-            <div style={{ marginTop: 10 }}>
+            <div style={{ marginTop: 18, marginBottom:0 }}>
                 {this.props.coins.length !== 0 ? <marquee><span>{this.props.BTCname}</span> <span style={convert1 < 0 ? { color: "red" } : { color: "lime" }}>{this.props.BTC.CHANGE24HOUR}</span> {this.props.ETHname} <span style={convert2 < 0 ? { color: "red" } : { color: "lime" }}>{this.props.coins.DISPLAY.ETH.USD.CHANGE24HOUR}</span> {this.props.XRPname} <span style={convert3 < 0 ? { color: "red" } : { color: "lime" }}>{this.props.coins.DISPLAY.XRP.USD.CHANGE24HOUR}</span> {this.props.LTCname} <span style={convert4 < 0 ? { color: "red" } : { color: "lime" }}>{this.props.coins.DISPLAY.LTC.USD.CHANGE24HOUR}</span> {this.props.EOSname} <span style={convert5 < 0 ? { color: "red" } : { color: "lime" }}>{this.props.coins.DISPLAY.EOS.USD.CHANGE24HOUR}</span></marquee> : 'loading'}
             </div>
         )

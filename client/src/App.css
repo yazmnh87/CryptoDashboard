@@ -1,22 +1,10 @@
 body {
     font-family: 'Play', sans-serif;
-    /* position: relative; */
 }
-/* .AppDiv{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: auto;
-    grid-auto-rows: auto;
-    grid-template-areas: 
-      ". n n n n n"
-      ". c c c c c"
-      ". c c c c c"
-      ". f f f f f"
-    ;
-  } */
   .UserProfile{
     grid-area: u;
     position: fixed;
+    width: 281px;
   }
   .navbar{
     grid-area: n;
