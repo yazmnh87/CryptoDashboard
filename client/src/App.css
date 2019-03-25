@@ -10,19 +10,23 @@ body {
       "u n n n n"
       "u c c c c"
       "u c c c c"
-      "u c c c c"
-      "u c c c c"
+      "f f f f f"
     ;
   }
   .UserProfile{
     grid-area: u;
-    position: fixed;
+    position: static;
   }
   .navbar{
     grid-area: n;
+    position: relative;
   }
   .CoinInfo{
     grid-area: c;
+    position: relative;
+  }
+  .Footer{
+    grid-area: f;
   }
   .navbar {
     overflow: hidden;
@@ -92,4 +96,18 @@ body {
   .coinpricered {
     display: inline-block;
     color: red;
+  }
+
+  @media (max-width: 666px){
+    .AppDiv{
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: auto;
+      grid-auto-rows: auto;
+      grid-template-areas: 
+        "n n n n n"
+        "u u u u u"
+        "c c c c c"
+      ;
+    }
   }

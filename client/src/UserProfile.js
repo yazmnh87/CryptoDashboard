@@ -46,5 +46,3 @@ class UserProfile extends Component {
 }
 
 export default withProvider(UserProfile);
-
-

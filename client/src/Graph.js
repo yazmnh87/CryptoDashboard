@@ -67,7 +67,7 @@ class Graph extends Component {
         return (
             
             <>
-                <LineChart height="480px" data={{...mapped}}  xtitle="Days" ytitle="Price" colors={["blue", "red"]}  library={{backgroundColor: "white"}}/>
+                <LineChart height="480px" data={{...mapped}}  xtitle="Days" ytitle="Price" colors={["lime", "red"]}  library={{backgroundColor: "white"}}/>
             </>
     )
 }

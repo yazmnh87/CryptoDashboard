@@ -18,10 +18,9 @@ class News extends Component {
                 <div>
                     <h2 style={{color: "lime"}}>{article.title}</h2>
                     <p>By: {article.author}</p>
-                    <img style={{width: "30%"}}alt="" src={article.urlToImage}/>
-                    <p>{rejoin}<a href={article.url} style={{color: "lime"}}>Read More</a></p>
-                    <hr></hr>
-                    <br></br>
+                    <img style={{width: "45%"}}alt="" src={article.urlToImage}/>
+                    <p>{rejoin}<a target="_blank" href={article.url} style={{color: "lime"}}>Read More</a></p>
+                    <hr style={{marginBottom: "none"}}></hr>
                  </div>
            )
         })
