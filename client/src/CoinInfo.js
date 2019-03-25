@@ -1,14 +1,13 @@
 import React from 'react';
 import Graph from "./Graph"
-import {withProvider} from "./context"
+import { withProvider } from "./context"
 import Coins from "./Coins"
 
 const CoinInfo = (props) => {
-    // console.log(props)
     return (
         <div className='CoinInfo'>
-            <Graph style={{width: "95%", height:"62vh", marginLeft:"3%", marginRight:"0%"}}/>
-             <Coins/>
+            <Graph style={{ width: "95%", height: "62vh", marginLeft: "3%", marginRight: "0%" }} />
+            <Coins />
 
         </div>
     );

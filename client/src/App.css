@@ -1,30 +1,38 @@
 body {
     font-family: 'Play', sans-serif;
+    /* position: relative; */
 }
-.AppDiv{
+/* .AppDiv{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
     grid-auto-rows: auto;
     grid-template-areas: 
-      "u n n n n"
-      "u c c c c"
-      "u c c c c"
-      "f f f f f"
+      ". n n n n n"
+      ". c c c c c"
+      ". c c c c c"
+      ". f f f f f"
     ;
-  }
+  } */
   .UserProfile{
     grid-area: u;
-    position: static;
+    position: fixed;
   }
   .navbar{
     grid-area: n;
+    margin-left:270px
   }
   .CoinInfo{
     grid-area: c;
+    margin-left:270px
   }
   .Footer{
     grid-area: f;
+    margin-left:270px
+  }
+  .About{
+    margin-left:290px;
+    grid-area: a;
   }
   .navbar {
     overflow: hidden;
@@ -97,6 +105,22 @@ body {
   }
 
   @media (max-width: 666px){
+    .UserProfile{
+      grid-area: u;
+      position: static;
+    }
+    .navbar{
+      grid-area: n;
+      margin-left:0px
+    }
+    .CoinInfo{
+      grid-area: c;
+      margin-left:0px
+    }
+    .Footer{
+      grid-area: f;
+      margin-left:0px
+    }
     .AppDiv{
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -106,6 +130,7 @@ body {
         "n n n n n"
         "u u u u u"
         "c c c c c"
+        "a a a a a"
       ;
     }
   }
