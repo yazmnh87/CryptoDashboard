@@ -102,7 +102,7 @@ export default class GlobalProvider extends Component {
     axios.get(`https://vschool-cors.herokuapp.com?url=https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH,EOS,XRP,BTC,LTC&tsyms=BTC,USD,EUR&api_key=${process.env.REACT_APP_MM}`)
       .then(res => {
 
-        if (this.state.currentCoin === "BTC" && this.state.coins.length !== 0) {
+        if (this.state.currentCoin === "BTC") {
           this.setState({
             coins: res.data,
             BTC: res.data.DISPLAY.BTC.USD,
@@ -116,7 +116,7 @@ export default class GlobalProvider extends Component {
             coinPriceChng: res.data.DISPLAY.BTC.USD.CHANGE24HOUR,
           })
         }
-        else if (this.state.currentCoin === "ETH" && this.state.coins.length !== 0) {
+        else if (this.state.currentCoin === "ETH") {
           this.setState({
             coins: res.data,
             ETH: res.data.DISPLAY.ETH.USD,
@@ -130,7 +130,7 @@ export default class GlobalProvider extends Component {
             coinPriceChng: res.data.DISPLAY.ETH.USD.CHANGE24HOUR,
           })
         }
-        else if (this.state.currentCoin === "LTC" && this.state.coins.length !== 0) {
+        else if (this.state.currentCoin === "LTC") {
           this.setState({
             coins: res.data,
             XRP: res.data.DISPLAY.LTC.USD,
@@ -144,7 +144,7 @@ export default class GlobalProvider extends Component {
             coinPriceChng: res.data.DISPLAY.LTC.USD.CHANGE24HOUR,
           })
         }
-        else if (this.state.currentCoin === "XRP" && this.state.coins.length !== 0) {
+        else if (this.state.currentCoin === "XRP") {
           this.setState({
             coins: res.data,
             LTC: res.data.DISPLAY.XRP.USD,
@@ -158,7 +158,7 @@ export default class GlobalProvider extends Component {
             coinPriceChng: res.data.DISPLAY.XRP.USD.CHANGE24HOUR,
           })
         }
-        else if (this.state.currentCoin === "EOS" && this.state.coins.length !== 0) {
+        else if (this.state.currentCoin === "EOS") {
           this.setState({
             coins: res.data,
             EOS: res.data.DISPLAY.EOS.USD,
