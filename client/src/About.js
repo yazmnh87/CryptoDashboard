@@ -4,15 +4,15 @@ import { SocialIcon } from 'react-social-icons';
 const About = () => {
     return (
         <div className="About" >
-            <h1 style={{ marginLeft: 10, textAlign: "center", color: "red" }}>Ibrahim Mohamed</h1>
+            <h1 style={{ marginLeft: 10, textAlign: "center", color: "red", fontFamily:"cursive" }}>Ibrahim Mohamed</h1>
             <div style={{ textAlign: "center", margin: 0 }}>
                 <SocialIcon rel="noopener noreferrer" target="_blank" url="https://github.com/Ibrahim-Mohamed1" bgColor="white" fgColor="red" style={{ margin: 10 }} network="github" />
                 <SocialIcon rel="noopener noreferrer" target="_blank" url="https://www.linkedin.com/in/ibrahim-mohamed-" bgColor="white" fgColor="red" style={{ margin: 10 }} network="linkedin" />
             </div>
             <p style={{ marginLeft: 10, marginRight: 10 }}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam quidem, iure earum perferendis temporibus rerum quos aspernatur natus distinctio architecto, atque libero adipisci corporis excepturi quo enim repellat consequuntur est reprehenderit omnis. Obcaecati quidem quasi atque exercitationem maiores voluptatum, dolorem ea sapiente. Facere provident, fugit autem, similique vel dolore in eos consequuntur non natus officia, inventore officiis sint quos nesciunt numquam accusamus? Tempora consequatur expedita explicabo ratione ipsum aspernatur ab! Facere et, ex dolor magni doloremque molestias eos delectus pariatur porro qui laboriosam! Reiciendis ipsam alias itaque corporis laudantium fugiat tenetur ex molestiae inventore rerum sed ut eius hic, numquam quia repellendus enim laboriosam reprehenderit! Unde obcaecati tempora odio commodi impedit perferendis aut repellendus aperiam perspiciatis, veritatis quos, ratione atque, numquam aliquid velit quo fugit saepe modi explicabo nesciunt rem? Sequi labore enim praesentium nisi consectetur placeat veniam odit assumenda, eum, debitis consequuntur. Amet culpa laboriosam enim non aspernatur odio eius voluptates? Placeat porro praesentium libero alias ipsam temporibus dolor commodi molestiae. Omnis, repudiandae quos quia doloribus ad minus asperiores at tempore exercitationem optio assumenda qui recusandae! Accusamus facilis impedit, aut perspiciatis asperiores quae quisquam cum doloremque iusto? Dicta reprehenderit officia culpa ducimus repellat provident eveniet veritatis odio incidunt. Consequatur.
+            Aspiring Web Developer making a career switch to pursue life passions. Currently attending a Full-Stack Web Development Program. Problem solving is one of my favorite things to do and using my background in Psychology/Sociology I am fit to make user friendly interface designs.
             </p>
-            <h1 style={{ marginLeft: 10, textAlign: "center", color: "red" }}>Stuart Gardner</h1>
+            <h1 style={{ marginLeft: 10, textAlign: "center", color: "red", fontFamily:"pure-evil-2" }}>Stuart Gardner</h1>
             <div style={{ textAlign: "center", margin: 0 }}>
                 <SocialIcon rel="noopener noreferrer" target="_blank" url="https://github.com/Stgardner" bgColor="white" fgColor="red" style={{ margin: 10 }} network="github" />
                 <SocialIcon rel="noopener noreferrer" target="_blank" url="#" bgColor="white" fgColor="red" style={{ margin: 10 }} network="linkedin" />
