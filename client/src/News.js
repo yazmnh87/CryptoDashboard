@@ -4,7 +4,6 @@ import { withProvider } from "./context"
 class News extends Component {
     componentDidMount() {
         this.props.getNews()
-        console.log("mounted")
     }
 
     render() {
@@ -20,7 +19,7 @@ class News extends Component {
                         <h2 style={{ color: "lime" }}>{article.title}</h2>
                         <p>By: {article.author}</p>
                         <img style={{ width: "45%" }} alt="" src={article.urlToImage} />
-                        <p>{rejoin}<a target="_blank" href={article.url} style={{ color: "lime" }}>Read More</a></p>
+                        <p>{rejoin}<a target="_blank" rel="noopener noreferrer" href={article.url} style={{ color: "lime" }}>Read More</a></p>
                     </div>
                     <h1 style={{ fontFamily: "cursive", fontSize: "4em", margin: 0 }}>...</h1>
                 </>

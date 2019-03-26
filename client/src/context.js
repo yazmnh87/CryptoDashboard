@@ -36,7 +36,6 @@ export default class GlobalProvider extends Component {
 
   componentWillUpdate() {
     this.getCoinData()
-    this.getNews()
   }
 
   countDown = () => {
