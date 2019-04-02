@@ -15,7 +15,7 @@
     "react-scripts": "2.1.8",
     "react-social-icons": "^4.1.0"
   },
-  "proxy": "http://localhost:6669",
+  "proxy": "http://localhost:8000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
